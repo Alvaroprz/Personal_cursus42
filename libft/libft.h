@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:45:33 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/09 12:05:25 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/09 16:43:05 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-int				ft_atoi(int c);
+int				ft_atoi(char *str);
 int				ft_bzero(void *s, size_t n);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
@@ -30,5 +30,8 @@ int				ft_tolower(int c);
 char			ft_strcpy(char *dest, char *src);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
+char			*ft_strchr(const char *s, int c);
+char			*ft_strchr(const char *s, int c);
+void			*ft_memcpy(void *dest_str, const void *src_str, size_t n);
+void			*ft_memmove(void *dest, const void *src, size_t n);
 #endif
-

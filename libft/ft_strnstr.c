@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 15:57:14 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/09 12:22:33 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/09 13:48:00 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,15 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	i = 0;
 	while (ret[i] != '\0' && i < len)
 	{
-		if (str[i]== to_find[0])
+		if (str[i] == to_find[0])
 		{
 			j = 0;
+			while (str[i + j] == to_find[j] && i + j < len)
+				j++;
+			if (to_find[j] == '\0')
+				return (ret + i);
 		}
+		i++;
 	}
 	return (NULL);
 }
