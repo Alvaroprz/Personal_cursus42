@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvapere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 12:26:40 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/08 12:26:42 by alvapere         ###   ########.fr       */
+/*   Created: 2025/04/10 12:13:09 by alvapere          #+#    #+#             */
+/*   Updated: 2025/04/10 12:13:09 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
 
 int	*ft_memset(void *ptr, int value, size_t num)
