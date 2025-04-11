@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 11:11:57 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/11 10:25:03 by alvapere         ###   ########.fr       */
+/*   Created: 2025/04/11 10:28:46 by alvapere          #+#    #+#             */
+/*   Updated: 2025/04/11 10:57:26 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			i;
-	unsigned char	*aux;
-	unsigned char	*aux2;
+	size_t	len_s1;
+	size_t	len_s2;
+	char	*aux;
 
-	aux = (unsigned char *)s1;
-	aux2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
-		i++;
-	return ((unsigned int)aux[i] - (unsigned int)aux2[i]);
+	len_s1 = ft_strlen(s1);
+	len_s1 = ft_strlen(s2);
+	if (!len_s1 || !len_s1)
+		return (NULL);
+	aux = (char *)malloc(sizeof(char) *(len_s1 + len_s1 + 1));
+	if (!aux)
+		return (NULL);
+	ft_strlcpy(aux, s1, len_s1);
+	ft_strlcat(aux, s2, len_s1 + len_s2);
+	return (aux);
 }

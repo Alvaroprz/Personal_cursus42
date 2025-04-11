@@ -1,26 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 10:31:44 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/11 10:18:58 by alvapere         ###   ########.fr       */
+/*   Created: 2025/04/11 12:58:16 by alvapere          #+#    #+#             */
+/*   Updated: 2025/04/11 13:27:33 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+static int	numlen(int n)
 {
-	size_t	len;
-	char	*ret;
+	int	len;
 
-	len = ft_strlen(s);
-	ret = (char *)malloc((len + 1) * sizeof(char));
-	if (!ret)
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	long	num;
+	int		len;
+
+	num = n;
+	len = numlen(num);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
-	ft_strlcpy(ret, s, len);
-	return (ret);
+	str[len] = '\0';
+	if (num == 0)
+		str[0] = '0';
+	if (num < 0)
+	{
+		str[0] = '-';
+		num = -num;
+	}
+	while (num)
+	{
+		str[--len] = (num % 10) + '0';
+		num /= 10;
+	}
+	return (str);
 }

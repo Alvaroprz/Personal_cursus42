@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:13:21 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/10 12:13:21 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/11 10:05:23 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (ptr == NULL)
 		return (NULL);
 	ft_bzero(ptr, (nmemb * size));
-	return(ptr);
+	return (ptr);
 }
