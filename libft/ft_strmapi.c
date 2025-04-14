@@ -23,6 +23,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	aux = (char *)malloc(sizeof(char) * (len + 1));
 	if (!s || !f)
 		return (NULL);
+	if (!aux)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		aux[i] = f(i, s[i]);

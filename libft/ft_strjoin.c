@@ -20,12 +20,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
-	if (!len_s1 || !len_s1)
+	if (!s1 || !s1)
 		return (NULL);
 	aux = (char *)malloc(sizeof(char) *(len_s1 + len_s2 + 1));
 	if (!aux)
 		return (NULL);
-	ft_strlcpy(aux, s1, len_s1);
-	ft_strlcat(aux, s2, len_s1 + len_s2);
+	ft_strlcpy(aux, s1, len_s1 + 1);
+	ft_strlcat(aux, s2, len_s1 + len_s2 + 1);
 	return (aux);
 }
