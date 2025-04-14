@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 15:41:33 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/11 16:00:35 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/11 16:06:29 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n >= 10)
 	{
-		ft_putnbr(n / 10);
+		ft_putnbr_fd(n / 10, fd);
 	}
 	c = n % 10 + '0';
 	write (fd, &c, 1);

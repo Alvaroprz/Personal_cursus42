@@ -6,13 +6,13 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:22:32 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/11 10:20:17 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/14 13:28:43 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 	char	*ret;
@@ -23,4 +23,3 @@ size_t	strlen(const char *s)
 		i++;
 	return (i);
 }
-

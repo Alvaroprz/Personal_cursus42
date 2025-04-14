@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:36:21 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/09 16:41:08 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/14 17:04:25 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@ void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 	unsigned char	*ret2;
 
 	i = 0;
+	if (src_str == NULL && dest_str == NULL)
+		return (NULL);
 	ret = (unsigned char *) src_str;
 	ret2 = (unsigned char *) dest_str;
 	while (i < n)
-		ret[i++] = ret2[i];
+	{
+		ret2[i] = ret[i];
+		i++;
+	}
 	return (dest_str);
 }

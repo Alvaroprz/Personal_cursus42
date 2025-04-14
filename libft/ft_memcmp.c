@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 11:11:57 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/11 10:25:03 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/14 17:12:31 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	aux2 = (unsigned char *)s2;
 	i = 0;
 	while (i < n)
+	{
+		if (aux[i] != aux2[i])
+			return (aux[i] - aux2[i]);
 		i++;
-	return ((unsigned int)aux[i] - (unsigned int)aux2[i]);
+	}
+	return (0);
 }

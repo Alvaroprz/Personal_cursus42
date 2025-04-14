@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:38:04 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/09 15:37:24 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/14 17:16:42 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	char	*ret;
-
-	ret = (char *) s;
-	i = 0;
-	while (ret[i] != '\0')
-		if (ret[i] == c)
-			return (ret + i);
+	while (*s != '\0')
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
 	return (NULL);
 }

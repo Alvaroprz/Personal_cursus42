@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:23:37 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/09 12:04:39 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/14 13:38:42 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	if (c <= 'A' && c >= 'Z')
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }

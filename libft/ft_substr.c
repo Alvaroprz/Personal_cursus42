@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 13:21:41 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/11 10:16:20 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/14 13:08:36 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	sub_len;
 	char	*sub;
 
-	sub_len = s_len - start;
 	s_len = ft_strlen(s);
+	sub_len = s_len - start;
 	if (!s)
 		return (NULL);
 	if (start >= s_len)
