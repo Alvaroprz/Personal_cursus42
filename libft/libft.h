@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:45:33 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/14 17:16:36 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/15 11:47:34 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 
 /// Funciones de libc /// 
-int				ft_atoi(char *str);
+int				ft_atoi(const char *nptr);
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
