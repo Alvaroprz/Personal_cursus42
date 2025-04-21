@@ -6,64 +6,93 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:10:25 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/15 14:31:00 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/21 12:59:30 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_allocate(char **tab, char const *s, char sep)
+static int	count_letters(const char *s, char c)
 {
-	char		**tab_p;
-	char const	*tmp;
+	int	len;
 
-	tmp = s;
-	tab_p = tab;
-	while (*tmp)
-	{
-		while (*s == sep)
-			s++;
-		tmp = s;
-		while (*tmp && *tmp != sep)
-			tmp++;
-		if (*tmp == sep || tmp > s)
-		{
-			*tab_p = ft_substr(s, 0, tmp - s);
-			s = tmp;
-			tab_p++;
-		}
-	}
-	*tab_p = NULL;
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
 }
 
-int	ft_count_words(char const *s, char sep)
+static int	count_words(const char *s, char c)
 {
-	int	word_count;
+	int	i;
+	int	count;
 
-	word_count = 0;
-	while (*s)
+	i = 0;
+	count = 0;
+	while (s[i])
 	{
-		while (*s == sep)
-			s++;
-		if (*s)
-			word_count++;
-		while (*s && *s != sep)
-			s++;
+		while (s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
+		{
+			count++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
 	}
-	return (word_count);
+	return (count);
+}
+
+static char	*word_dup(const char *s, int len)
+{
+	char	*word;
+	int		i;
+
+	word = malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		word[i] = s[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+static void	free_all(char **arr, int words)
+{
+	while (words--)
+		free(arr[words]);
+	free(arr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**new;
-	int		size;
+	char	**res;
+	int		i;
+	int		letters;
 
 	if (!s)
 		return (NULL);
-	size = ft_count_words(s, c);
-	new = (char **)malloc(sizeof(char *) * (size + 1));
-	if (!new)
+	res = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!res)
 		return (NULL);
-	ft_allocate(new, s, c);
-	return (new);
+	i = 0;
+	while (*s)
+	{
+		while (*s == c)
+			s++;
+		if (*s && *s != c)
+		{
+			letters = count_letters(s, c);
+			res[i] = word_dup(s, letters);
+			if (!res[i++])
+				return (free_all(res, i), NULL);
+			s += letters;
+		}
+	}
+	res[i] = NULL;
+	return (res);
 }

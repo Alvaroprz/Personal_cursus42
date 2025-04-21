@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvapere <<alvapere@student.42.fr>>        +#+  +:+       +#+        */
+/*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:52:02 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/18 13:03:36 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/21 11:16:26 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@
 /// @param del: un puntero a función utilizado para eliminar
 // el contenido de un nodo.
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    t_list  *aux;
-    t_list  *aux2;
+	t_list	*aux;
+	t_list	*aux2;
 
-    aux = *lst;
-    while (aux)
-    {
-        aux2 = aux->next;
-        ft_lstdelone(aux,del);
-        aux = aux2;
-    }
-    *lst = NULL;
+	aux = *lst;
+	while (aux)
+	{
+		aux2 = aux->next;
+		ft_lstdelone(aux, del);
+		aux = aux2;
+	}
+	*lst = NULL;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvapere <<alvapere@student.42.fr>>        +#+  +:+       +#+        */
+/*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 13:14:35 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/18 13:38:40 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/21 13:08:43 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,27 @@
 /// @return La nueva lista.
 // NULL si falla la reserva de memoria.
 
-t_list  *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list	*result;
+	t_list	*result;
 	t_list	*tmp;
+	void	*new_content;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	result = NULL;
 	while (lst)
 	{
-		tmp = ft_lstnew((*f)(lst->content));
+		new_content = f(lst->content);
+		tmp = ft_lstnew(new_content);
 		if (!tmp)
 		{
+			del(new_content);
 			ft_lstclear(&result, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&result, tmp);
-		tmp = tmp->next;
 		lst = lst->next;
 	}
-	return (result);   
+	return (result);
 }

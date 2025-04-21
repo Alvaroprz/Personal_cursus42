@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvapere <<alvapere@student.42.fr>>        +#+  +:+       +#+        */
+/*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:31:31 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/18 12:50:15 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/21 11:18:09 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 /// @param del un puntero a la función utilizada para liberar
 // el contenido del nodo.
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    if (lst == NULL || del == NULL)
-        return;
-    del(lst->content);
-    free(lst);
+	if (lst == NULL || del == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
 }
