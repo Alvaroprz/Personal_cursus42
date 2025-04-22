@@ -6,12 +6,15 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 10:31:44 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/11 10:18:58 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:10:43 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief:duplica una cadena de texto.
+/// @param s:Puntero a la cadena de texto original que queremos copiar.
+/// @return:Un puntero a la nueva cadena duplicada.
 char	*ft_strdup(const char *s)
 {
 	size_t	len;

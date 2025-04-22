@@ -6,12 +6,18 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:13:21 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/21 11:10:03 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:21:37 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief: Sirve para reservar memoria dinámica 
+///inicializada a cero.
+/// @param nmemb:número de elementos.
+/// @param size:tamaño de cada elemento.
+/// @return:devuelve un puntero a la memoria reservada,
+/// o NULL si falla.
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;

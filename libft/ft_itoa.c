@@ -6,11 +6,16 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 12:58:16 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/11 13:27:33 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:26:15 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/// @brief: usada para convertir un número entero (int) 
+///a una cadena de caracteres (char *).
+/// @param n: numero entero (int) pasado por parametro.
+/// @return: cadena de caracteres (char *)
 
 static int	numlen(int n)
 {

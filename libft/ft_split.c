@@ -6,11 +6,17 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:10:25 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/21 12:59:30 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:06:31 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/// @brief:Separar un string (s) en múltiples subcadenas 
+///(palabras), usando un caracter delimitador (c).
+/// @param s:un string puntero.
+/// @param c:caracter delimitador.
+/// @return: el resulltado de el string con los delimitadores.
 
 static int	count_letters(const char *s, char c)
 {

@@ -6,11 +6,15 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:24:11 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/15 11:47:10 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:16:55 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/// @brief convierte una cadena de caracteres a entero.
+/// @param nptr : es un puntero a char.
+/// @return : aplica el signo y devulve el numero final.
 
 int	ft_atoi(const char *nptr)
 {

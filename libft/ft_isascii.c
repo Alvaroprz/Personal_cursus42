@@ -6,9 +6,11 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:06:06 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/08 15:33:56 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:08:01 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

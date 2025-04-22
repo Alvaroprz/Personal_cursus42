@@ -6,12 +6,19 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 15:10:21 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/14 13:11:37 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:16:15 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief:na función segura que concatena dos cadenas 
+///con un límite de tamaño, evitando desbordamientos de buffer.
+/// @param dest:cadena de destino (donde se va a agregar src).
+/// @param src:cadena fuente que se va a copiar.
+/// @param size:el tamaño total del buffer de dest, 
+///incluyendo el espacio para \0.
+/// @return:La longitud total que la cadena trató de crear.
 unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 {
 	unsigned int	src_l;
