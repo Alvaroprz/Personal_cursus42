@@ -6,7 +6,7 @@
 /*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:52:47 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/25 13:24:59 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/25 16:08:23 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,10 @@ int	ft_print_string(char *str)
 	int	i;
 
 	i = 0;
-
 	if (str == 0)
-		return (ft_print_string("(NULL)"));
-
+		return (ft_print_string("(null)"));
 	while (str[i] != '\0')
-	{
-		i = ft_print_char(str[i]);
-		i++;
-	}
+		i += ft_print_char(str[i]);
 	return (i);
 }
 

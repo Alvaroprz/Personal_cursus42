@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alvapere <<alvapere@student.42.fr>>        +#+  +:+       +#+         #
+#    By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 10:59:42 by alvapere          #+#    #+#              #
-#    Updated: 2025/04/24 11:00:07 by alvapere         ###   ########.fr        #
+#    Updated: 2025/04/25 15:10:06 by alvapere         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-AME	=	libftprintf.a
+NAME	=	libftprintf.a
+INCLUDE	= 	ft_printf.h
 
-SRC	=	ft_printf.c
+SRC	=	ft_printf.c basic.c ft_hexadecimal.c
 
 OBJS = $(SRC:.c=.o)
 
@@ -20,6 +21,9 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 AR = ar crs
+
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
