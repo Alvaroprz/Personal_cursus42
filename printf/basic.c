@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   basic.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alvapere <<alvapere@student.42.fr>>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:52:47 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/25 16:08:23 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/27 12:19:20 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,11 @@ int	ft_print_unsigned(unsigned int n)
 	i = 0;
 	if (n == 0)
 		i += ft_print_char('0');
-	if (n / 10 != 0)
-		i += ft_print_unsigned(n / 10);
-	i += ft_print_char((n % 10) + '0');
+	else
+	{
+		if (n / 10 != 0)
+			i += ft_print_unsigned(n / 10);
+		i += ft_print_char((n % 10) + '0');
+	}
 	return (i);
 }

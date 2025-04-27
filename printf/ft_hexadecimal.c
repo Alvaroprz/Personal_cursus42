@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hexadecimal.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alvapere <<alvapere@student.42.fr>>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 13:09:46 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/25 15:37:09 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/27 12:32:35 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_hexalower(unsigned int n)
+int	ft_print_hexalower(unsigned long long n)
 {
 	int		i;
 	char	*hex;
@@ -42,16 +42,13 @@ int	ft_print_pointer(void *ptr)
 {
 	int	size;
 
-	size = 3;
-	write(1, "0x", 3);
-	size += ft_print_hexalower((unsigned long long)ptr);
+	size = 0;
+	if (ptr  == NULL)
+		size += write(1, "(nil)", 5);
+	else
+	{
+		size += write(1, "0x", 2);
+		size += ft_print_hexalower((unsigned long long)ptr);
+	}
 	return (size);
 }
-
-// int	main(void)
-// {
-// 	unsigned int	num;
-
-// 	num = 3735928559;
-// 	ft_print_hexadecimal(num);
-// }
