@@ -3,29 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvapere <alvapere@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alvapere <<alvapere@student.42.fr>>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:49:27 by alvapere          #+#    #+#             */
-/*   Updated: 2025/04/28 12:30:03 by alvapere         ###   ########.fr       */
+/*   Updated: 2025/04/29 16:55:51 by alvapere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# include <stdlib.h>
+# include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1234
+#  define BUFFER_SIZE 42
 # endif
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
+// funciones auxiliares //
+char	*ft_strchr(char *str, int c);
+char	*ft_strjoin(char *s1, char *s2);
+size_t	ft_strlen(char *str);
 
-int				ft_strlen(char *ptr);
-size_t			ft_strlcpy(char *dest, const char *src, size_t size);
-unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size);
-void			ft_bzero(void *s, size_t n);
-void			*ft_calloc(size_t nmeb, size_t size);
-char			*ft_strjoin(char const *s1, char const *s2);
-
+// funciones main //
+char	*get_next_line(int fd);
 #endif
